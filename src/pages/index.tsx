@@ -1,17 +1,18 @@
 import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
+import BrandHeader from "../components/BrandHeader";
 
 const pageStyles = {};
-
-const headingStyles = {};
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
-      <main style={pageStyles}>
-        <h1 style={headingStyles}>
+      <BrandHeader>
+        <h1>
           Billy Arante's Techblogs
         </h1>
+      </BrandHeader>
+      <main style={pageStyles}>
       </main>
       <footer>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
@@ -24,6 +25,6 @@ const IndexPage: React.FC<PageProps> = () => {
   )
 }
 
-export default IndexPage
+export default IndexPage;
 
-export const Head: HeadFC = () => <title>Billy Arante's Techblogs</title>
+export const Head: HeadFC = () => <title>Billy Arante's Techblogs</title>;
