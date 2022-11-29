@@ -1,8 +1,8 @@
 {
-  "name": "abw-techblogs",
+  "name": "techblogs",
   "version": "1.0.0",
-  "private": true,
-  "description": "abw-techblogs",
+  "private": false,
+  "description": "Billy Arante's Techblogs - My statically-generated tech blog website.",
   "author": "Billy Arante",
   "keywords": [
     "gatsby"
