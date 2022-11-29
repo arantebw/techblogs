@@ -8,6 +8,15 @@
     npm run develop
     ```
 
+## Design System
+
+### Color Palette
+
+1. `#000000` (black)
+2. `#150050` (blue)
+3. `#3F0071` (purple)
+4. `#FB2576` (pink)
+
 ## 🚀 Deployment on Gatsby Cloud
 
 - [Website](https://techblogs.gatsbyjs.io)
