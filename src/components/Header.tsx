@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const BrandHeader = styled.header`
+const Header = styled.header`
 	background-color: red;
 	color: white;
 	text-align: center;
 `;
 
-export default BrandHeader;
+export default Header;
