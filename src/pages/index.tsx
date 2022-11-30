@@ -6,12 +6,7 @@ import "../styles.css";
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
-      <Header>
-        <h1>
-          Billy Arante's Techblogs
-        </h1>
-        <p>Babbling about computer programming, open-source software, web development, and other stuff.</p>
-      </Header>
+      <Header />
       <main>
       </main>
       <footer>
