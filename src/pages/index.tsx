@@ -10,6 +10,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <h1>
           Billy Arante's Techblogs
         </h1>
+        <p>Babbling about computer programming, open-source software, web development, and other stuff.</p>
       </Header>
       <main>
       </main>
