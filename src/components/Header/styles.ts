@@ -9,11 +9,11 @@ export const Header = styled.header`
 `;
 
 export const Title = styled.h1`
-	color: #C69749;
+	color: #FB2576;
 	font-family: 'Arizonia', cursive;
 	font-size: 40px;
 `;
 
 export const Bio = styled.p`
-	color: #282A3A;
+	color: #FFFFFF;
 `;
