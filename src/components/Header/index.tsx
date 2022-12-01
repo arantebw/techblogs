@@ -1,18 +1,21 @@
 import * as React from "react";
 import * as Styled from "./styles";
-import { PageProps } from "gatsby";
+import { ThemeProvider } from "styled-components";
+import { theme } from "../../constants/theme";
 
-const Header: React.FC<PageProps> = () => {
+const Header: React.FC = () => {
 	return (
-		<Styled.Header>
-			<Styled.Title>
-				Billy Arante's Techblogs
-			</Styled.Title>
-			<Styled.Bio>
-				Babbling about computer programming, open-source software, web
-				development, and other stuff.
-			</Styled.Bio>
-		</Styled.Header>
+		<ThemeProvider theme={theme}>
+			<Styled.Header>
+				<Styled.Title>
+					Billy Arante's Techblogs
+				</Styled.Title>
+				<Styled.Bio>
+					Babbling about computer programming, open-source software, web
+					development, and other stuff.
+				</Styled.Bio>
+			</Styled.Header>
+		</ThemeProvider>
 	);
 };
 

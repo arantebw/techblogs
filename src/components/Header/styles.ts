@@ -9,7 +9,7 @@ export const Header = styled.header`
 `;
 
 export const Title = styled.h1`
-	color: #FB2576;
+	color: ${props => props.theme.pink};
 	font-family: 'Arizonia', cursive;
 	font-size: 40px;
 `;
