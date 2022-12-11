@@ -3,6 +3,7 @@ import type { HeadFC, PageProps } from "gatsby";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../styles.css";
+import config from "../../gatsby-config";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
