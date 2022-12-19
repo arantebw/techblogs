@@ -16,7 +16,13 @@ const Footer: React.FC = () => {
 					/>
 				</a>
 				<br />
-				This work is licensed under a <Global.Link rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</Global.Link>.
+				This work is licensed under a <Global.StyledLink rel="license" to={"http://creativecommons.org/licenses/by-sa/4.0/"}>Creative Commons Attribution-ShareAlike 4.0 International License</Global.StyledLink>.
+				<Styled.Nav>
+					<Global.StyledLink to={"https://github.com/arantebw"}>GitHub</Global.StyledLink>
+					<Global.StyledLink to={"https://freecodecamp.org/arantebw"}>FreeCodeCamp</Global.StyledLink>
+					<Global.StyledLink to={"https://linkein.com/in/arantebw"}>LinkedIn</Global.StyledLink>
+					<Global.StyledLink to={"https://twiiter.com/arantebw"}>Twitter</Global.StyledLink>
+				</Styled.Nav>
 			</Styled.Footer>
 		</ThemeProvider>
 	);

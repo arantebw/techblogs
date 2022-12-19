@@ -7,3 +7,12 @@ export const Footer = styled.footer`
   border-top: 8px solid ${props => props.theme.pink};
   padding: 24px 0;
 `;
+
+export const Nav = styled.nav`
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  & a {
+    margin-right: 16px;
+  }
+`;
