@@ -14,6 +14,6 @@ export const Title = styled.h1`
 	font-size: 40px;
 `;
 
-export const Bio = styled.p`
+export const Description = styled.p`
 	color: #FFFFFF;
 `;

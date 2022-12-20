@@ -1,18 +1,26 @@
 import * as React from "react";
-import type { HeadFC, PageProps } from "gatsby";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import "../styles.css";
-import config from "../../gatsby-config";
+import Layout from "../components/Layout";
+import type { HeadFC, PageProps } from "gatsby";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <>
-      <Header />
+    <Layout>
       <main>
+        <section>
+          <h3>Post #1</h3>
+          <p>The quick brown fox jumps over the lazy dog near the river bank.</p>
+        </section>
+        <section>
+          <h3>Post #2</h3>
+          <p>The quick brown fox jumps over the lazy dog near the river bank.</p>
+        </section>
+        <section>
+          <h3>Post #3</h3>
+          <p>The quick brown fox jumps over the lazy dog near the river bank.</p>
+        </section>
       </main>
-      <Footer />
-    </>
+    </Layout>
   )
 }
 
