@@ -1,21 +1,12 @@
 import * as React from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import useSiteMetadata from "../../hooks/useSiteMetadata";
 
 type Props = {
   pageTitle: string;
 };
 
 const Seo = ({ pageTitle }: Props) => {
-  const siteMetaData = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-  const { title: siteTitle } = siteMetaData.site.siteMetadata;
+  const { title: siteTitle } = useSiteMetadata();
 
   return (
     <title>{siteTitle} &middot; {pageTitle}</title>
