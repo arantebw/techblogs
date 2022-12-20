@@ -1,20 +1,31 @@
 import * as React from "react";
-import type { HeadFC, PageProps } from "gatsby";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import "../styles.css";
+import Layout from "../components/Layout";
+import type { HeadFC, PageProps } from "gatsby";
+import Seo from "../components/Seo";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <>
-      <Header />
+    <Layout>
       <main>
+        <h1>List of my posts</h1>
+        <section>
+          <h3>Post #1</h3>
+          <p>The quick brown fox jumps over the lazy dog near the river bank.</p>
+        </section>
+        <section>
+          <h3>Post #2</h3>
+          <p>The quick brown fox jumps over the lazy dog near the river bank.</p>
+        </section>
+        <section>
+          <h3>Post #3</h3>
+          <p>The quick brown fox jumps over the lazy dog near the river bank.</p>
+        </section>
       </main>
-      <Footer />
-    </>
+    </Layout>
   )
 }
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Billy Arante's Techblogs</title>;
+export const Head: HeadFC = () => <Seo pageTitle="Home" />;
