@@ -2,6 +2,7 @@ import * as React from "react";
 import "../styles.css";
 import Layout from "../components/Layout";
 import type { HeadFC, PageProps } from "gatsby";
+import Seo from "../components/Seo";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -26,4 +27,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Billy Arante's Techblogs</title>;
+export const Head: HeadFC = () => <Seo pageTitle="Home" />;
