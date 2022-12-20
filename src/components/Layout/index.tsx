@@ -1,9 +1,12 @@
-import { PageProps } from "gatsby";
 import * as React from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 
-const Layout: React.FC<PageProps> = ({ children }) => {
+type Props = {
+  children?: React.ReactNode;
+};
+
+const Layout = ({ children }: Props) => {
   return (
     <>
       <Header />
