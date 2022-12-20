@@ -1,6 +1,7 @@
 import * as React from "react";
-import { HeadFC, PageProps } from "gatsby";
+import "../styles";
 import Layout from "../components/Layout";
+import { HeadFC, PageProps } from "gatsby";
 import Seo from "../components/Seo";
 
 const AboutPage: React.FC<PageProps> = () => {
