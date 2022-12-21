@@ -1,30 +1,47 @@
 import * as React from "react";
 import "../styles.css";
 import Layout from "../components/Layout";
-import type { HeadFC, PageProps } from "gatsby";
+import { HeadFC, Link, PageProps } from "gatsby";
 import Seo from "../components/Seo";
+import { graphql } from "gatsby";
 
-const IndexPage: React.FC<PageProps> = () => {
+const IndexPage: React.FC<PageProps> = ({ data }) => {
   return (
     <Layout>
       <main>
-        <h1>List of my posts</h1>
-        <section>
-          <h3>Post #1</h3>
-          <p>The quick brown fox jumps over the lazy dog near the river bank.</p>
-        </section>
-        <section>
-          <h3>Post #2</h3>
-          <p>The quick brown fox jumps over the lazy dog near the river bank.</p>
-        </section>
-        <section>
-          <h3>Post #3</h3>
-          <p>The quick brown fox jumps over the lazy dog near the river bank.</p>
-        </section>
+        <h1>List of My Blogs</h1>
+        {
+          data.allMdx.nodes.map(node => (
+            <article key={node.id}>
+              <h2>
+                <Link to={`/blogs/${node.frontmatter.slug}`}>
+                  {node.frontmatter.title}
+                </Link>
+              </h2>
+              <p>{node.excerpt}</p>
+            </article>
+          ))
+        }
       </main>
     </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+    allMdx(sort: {frontmatter: {date: DESC}}) {
+      nodes {
+        frontmatter {
+          title
+          date(formatString: "MMMM D, YYYY")
+          slug
+        }
+        id
+        excerpt
+      }
+    }
+  }
+`;
 
 export default IndexPage;
 
