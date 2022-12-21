@@ -3,28 +3,32 @@ import "../styles.css";
 import Layout from "../components/Layout";
 import type { HeadFC, PageProps } from "gatsby";
 import Seo from "../components/Seo";
+import { graphql } from "gatsby";
 
-const IndexPage: React.FC<PageProps> = () => {
+const IndexPage: React.FC<PageProps> = ({ data }) => {
   return (
     <Layout>
       <main>
         <h1>List of my posts</h1>
-        <section>
-          <h3>Post #1</h3>
-          <p>The quick brown fox jumps over the lazy dog near the river bank.</p>
-        </section>
-        <section>
-          <h3>Post #2</h3>
-          <p>The quick brown fox jumps over the lazy dog near the river bank.</p>
-        </section>
-        <section>
-          <h3>Post #3</h3>
-          <p>The quick brown fox jumps over the lazy dog near the river bank.</p>
-        </section>
+        <ul>
+          {data.allFile.nodes.map(node => (
+            <li key={node.name}>{node.name}</li>
+          ))}
+        </ul>
       </main>
     </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+    allFile(filter: {sourceInstanceName: {eq: "blogs"}}) {
+      nodes {
+        name
+      }
+    }
+  }
+`;
 
 export default IndexPage;
 
