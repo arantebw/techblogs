@@ -11,9 +11,14 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
       <main>
         <h1>List of my posts</h1>
         <ul>
-          {data.allFile.nodes.map(node => (
-            <li key={node.name}>{node.name}</li>
-          ))}
+          {
+            data.allMdx.nodes.map(node => (
+              <article key={node.id}>
+                <h2>{node.frontmatter.title}</h2>
+                <p>{node.excerpt}</p>
+              </article>
+            ))
+          }
         </ul>
       </main>
     </Layout>
@@ -22,9 +27,14 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
 
 export const query = graphql`
   query {
-    allFile(filter: {sourceInstanceName: {eq: "blogs"}}) {
+    allMdx(sort: {frontmatter: {date: DESC}}) {
       nodes {
-        name
+        frontmatter {
+          title
+          date(formatString: "MMMM D, YYYY")
+        }
+        id
+        excerpt
       }
     }
   }
