@@ -1,14 +1,25 @@
 import * as React from "react";
-import "../styles.css";
-import Layout from "../components/Layout";
 import { HeadFC, Link, PageProps } from "gatsby";
-import Seo from "../components/Seo";
 import { graphql } from "gatsby";
+import styled from "styled-components";
+import Layout from "../components/Layout";
+import Seo from "../components/Seo";
+import "../styles.css";
+
+const StyledMain = styled.main`
+  min-width: 500px;
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+`;
 
 const IndexPage: React.FC<PageProps> = ({ data }) => {
   return (
     <Layout>
-      <main>
+      <StyledMain>
         <h1>List of My Blogs</h1>
         {
           data.allMdx.nodes.map(node => (
@@ -22,7 +33,7 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
             </article>
           ))
         }
-      </main>
+      </StyledMain>
     </Layout>
   )
 }
