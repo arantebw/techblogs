@@ -1,11 +1,11 @@
 import * as React from "react";
 import { HeadFC, Link, PageProps } from "gatsby";
 import { graphql } from "gatsby";
-import styled, {ThemeProvider} from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import "../styles.css";
-import {theme} from "../constants/theme";
+import { theme } from "../constants/theme";
 
 const StyledMain = styled.main`
   min-width: 500px;
@@ -45,6 +45,7 @@ const StyledDivRight = styled.div`
 const StyledLink = styled(Link)`
   color: ${props => props.theme.purple};
   text-decoration: none;
+  vertical-align: middle;
 
   &:hover {
     text-decoration: underline;
