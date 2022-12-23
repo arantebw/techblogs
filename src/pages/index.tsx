@@ -5,47 +5,78 @@ import styled, { ThemeProvider } from "styled-components";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import "../styles.css";
-import { theme } from "../constants/theme";
+import { device, theme } from "../constants/theme";
 
 const StyledMain = styled.main`
-  min-width: 500px;
-  max-width: 50%;
-  margin: 0 auto;
-  padding: 16px;
   display: flex;
   flex-direction: column;
   row-gap: 16px;
+  padding: 16px;
+
+  @media ${device.tablet} {
+    min-width: 500px;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  @media ${device.laptop} {
+    max-width: 70%;
+  }
+
+  @media ${device.laptopLarge} {
+    max-width: 60%;
+  }
 `;
 
 const StyledArticle = styled.article`
   display: flex;
-  flex-direction: row;
-  column-gap: 16px;
+  flex-direction: column;
+  row-gap: 16px;
+
+  @media ${device.tablet} {
+    flex-direction: row;
+    column-gap: 16px;
+  }
 `;
 
 const StyledDivLeft = styled.div`
-  width: 30%;
+  width: 100%;
   height: 150px;
   flex-basis: auto;
   background-color: rgba(0, 0, 0, 20%);
+
+  @media ${device.tablet} {
+    width: 40%;
+  }
+
+  @media ${device.laptopLarge} {
+    width: 30%;
+  }
 `;
 
 const StyledDivRight = styled.div`
-  width: 70%;
+  width: 100%;
   flex-basis: auto;
   display: flex;
   flex-direction: column;
   row-gap: 16px;
 
   & > p {
-    font-size: 0.8rem;
+    font-size: 1rem;
+  }
+
+  @media ${device.tablet} {
+    width: 60%;
+  }
+
+  @media ${device.laptopLarge} {
+    width: 70%;
   }
 `;
 
 const StyledLink = styled(Link)`
   color: ${props => props.theme.purple};
   text-decoration: none;
-  vertical-align: middle;
 
   &:hover {
     text-decoration: underline;
