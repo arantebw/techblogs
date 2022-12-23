@@ -6,6 +6,8 @@ import styled, { ThemeProvider } from "styled-components";
 import { device, theme } from "../../constants/theme";
 
 const StyledMain = styled.main`
+  max-width: 768px;
+  margin: 0 auto;
   padding: 16px;
   display: flex;
   flex-direction: column;
