@@ -5,33 +5,41 @@ import styled, { ThemeProvider } from "styled-components";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import "../styles.css";
-import { theme } from "../constants/theme";
+import { device, theme } from "../constants/theme";
 
 const StyledMain = styled.main`
-  min-width: 500px;
-  max-width: 50%;
-  margin: 0 auto;
-  padding: 16px;
   display: flex;
   flex-direction: column;
   row-gap: 16px;
+  padding: 16px;
+
+  @media ${device.tablet} {
+    min-width: 500px;
+    max-width: 50%;
+    margin: 0 auto;
+  }
 `;
 
 const StyledArticle = styled.article`
   display: flex;
-  flex-direction: row;
-  column-gap: 16px;
+  flex-direction: column;
+  row-gap: 16px;
+
+  @media ${device.tablet} {
+    flex-direction: row;
+    column-gap: 16px;
+  }
 `;
 
 const StyledDivLeft = styled.div`
-  width: 30%;
+  width: 100%;
   height: 150px;
   flex-basis: auto;
   background-color: rgba(0, 0, 0, 20%);
 `;
 
 const StyledDivRight = styled.div`
-  width: 70%;
+  width: 100%;
   flex-basis: auto;
   display: flex;
   flex-direction: column;
