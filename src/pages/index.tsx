@@ -15,8 +15,16 @@ const StyledMain = styled.main`
 
   @media ${device.tablet} {
     min-width: 500px;
-    max-width: 50%;
+    max-width: 80%;
     margin: 0 auto;
+  }
+
+  @media ${device.laptop} {
+    max-width: 70%;
+  }
+
+  @media ${device.laptopLarge} {
+    max-width: 60%;
   }
 `;
 
@@ -36,6 +44,14 @@ const StyledDivLeft = styled.div`
   height: 150px;
   flex-basis: auto;
   background-color: rgba(0, 0, 0, 20%);
+
+  @media ${device.tablet} {
+    width: 40%;
+  }
+
+  @media ${device.laptopLarge} {
+    width: 30%;
+  }
 `;
 
 const StyledDivRight = styled.div`
@@ -47,6 +63,14 @@ const StyledDivRight = styled.div`
 
   & > p {
     font-size: 1rem;
+  }
+
+  @media ${device.tablet} {
+    width: 60%;
+  }
+
+  @media ${device.laptopLarge} {
+    width: 70%;
   }
 `;
 
