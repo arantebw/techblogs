@@ -14,9 +14,7 @@ const StyledMain = styled.main`
   padding: 16px;
 
   @media ${device.tablet} {
-    min-width: 500px;
-    max-width: 80%;
-    margin: 0 auto;
+    padding: 24px;
   }
 
   @media ${device.laptop} {
@@ -41,7 +39,7 @@ const StyledArticle = styled.article`
 
 const StyledDivLeft = styled.div`
   width: 100%;
-  height: 150px;
+  height: 200px;
   flex-basis: auto;
   background-color: rgba(0, 0, 0, 20%);
 
