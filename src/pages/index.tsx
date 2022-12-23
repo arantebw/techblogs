@@ -46,14 +46,13 @@ const StyledDivRight = styled.div`
   row-gap: 16px;
 
   & > p {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 `;
 
 const StyledLink = styled(Link)`
   color: ${props => props.theme.purple};
   text-decoration: none;
-  vertical-align: middle;
 
   &:hover {
     text-decoration: underline;
