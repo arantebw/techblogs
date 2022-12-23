@@ -19,6 +19,7 @@ const StyledMain = styled.main`
 
   @media ${device.laptop} {
     max-width: 70%;
+    margin: 0 auto;
   }
 
   @media ${device.laptopLarge} {
