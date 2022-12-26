@@ -1,26 +1,12 @@
 import React from "react";
 import { graphql, HeadFC, PageProps } from "gatsby";
+import styled, { ThemeProvider } from "styled-components";
+
 import Layout from "../../components/Layout";
 import Seo from "../../components/Seo";
-import styled, { ThemeProvider } from "styled-components";
+
 import { device, theme } from "../../constants/theme";
-
-const StyledMain = styled.main`
-  max-width: 768px;
-  margin: 0 auto;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 16px;
-  
-  @media ${device.tablet} {
-    padding: 24px;
-  }
-`;
-
-const StyledHeader = styled.h1`
-  color: ${props => props.theme.purple};
-`;
+import { StyledH1, StyledMainPostView } from "../../styles";
 
 // Container of the hero banner
 const StyledDiv = styled.div`
@@ -48,14 +34,14 @@ const BlogPostPage: React.FC<PageProps> = ({ data, children }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <StyledMain>
-          <StyledHeader>{data.mdx.frontmatter.title}</StyledHeader>
+        <StyledMainPostView>
+          <StyledH1>{data.mdx.frontmatter.title}</StyledH1>
           <small>{data.mdx.frontmatter.date}</small>
           <StyledDiv></StyledDiv>
           <StyledContent>
             {children}
           </StyledContent>
-        </StyledMain>
+        </StyledMainPostView>
       </Layout>
     </ThemeProvider>
   );
