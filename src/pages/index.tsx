@@ -7,7 +7,7 @@ import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 
 import "../styles.css";
-import { StyledMain } from "../styles";
+import { StyledH1, StyledMain } from "../styles";
 import { device, theme } from "../constants/theme";
 
 const StyledArticle = styled.article`
@@ -70,7 +70,7 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <StyledMain>
-          <h1>List of My Blogs</h1>
+          <StyledH1>List of My Blogs</StyledH1>
           {
             data.allMdx.nodes.map(node => (
               <StyledArticle key={node.id}>

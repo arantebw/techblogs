@@ -46,3 +46,7 @@ export const StyledMainPostView = styled.main`
     padding: 24px;
   }
 `;
+
+export const StyledH1 = styled.h1`
+  color: ${props => props.theme.blue};
+`;
