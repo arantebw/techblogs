@@ -33,3 +33,16 @@ export const StyledMain = styled.main`
     max-width: 60%;
   }
 `;
+
+export const StyledMainPostView = styled.main`
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  
+  @media ${device.tablet} {
+    padding: 24px;
+  }
+`;

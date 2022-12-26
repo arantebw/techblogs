@@ -4,19 +4,7 @@ import Layout from "../../components/Layout";
 import Seo from "../../components/Seo";
 import styled, { ThemeProvider } from "styled-components";
 import { device, theme } from "../../constants/theme";
-
-const StyledMain = styled.main`
-  max-width: 768px;
-  margin: 0 auto;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 16px;
-  
-  @media ${device.tablet} {
-    padding: 24px;
-  }
-`;
+import {StyledMainPostView} from "../../styles";
 
 const StyledHeader = styled.h1`
   color: ${props => props.theme.purple};
@@ -48,14 +36,14 @@ const BlogPostPage: React.FC<PageProps> = ({ data, children }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <StyledMain>
+        <StyledMainPostView>
           <StyledHeader>{data.mdx.frontmatter.title}</StyledHeader>
           <small>{data.mdx.frontmatter.date}</small>
           <StyledDiv></StyledDiv>
           <StyledContent>
             {children}
           </StyledContent>
-        </StyledMain>
+        </StyledMainPostView>
       </Layout>
     </ThemeProvider>
   );
