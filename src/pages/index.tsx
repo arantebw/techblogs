@@ -2,30 +2,13 @@ import * as React from "react";
 import { HeadFC, Link, PageProps } from "gatsby";
 import { graphql } from "gatsby";
 import styled, { ThemeProvider } from "styled-components";
+
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+
 import "../styles.css";
+import { StyledMain } from "../styles";
 import { device, theme } from "../constants/theme";
-
-const StyledMain = styled.main`
-  display: flex;
-  flex-direction: column;
-  row-gap: 16px;
-  padding: 16px;
-
-  @media ${device.tablet} {
-    padding: 24px;
-  }
-
-  @media ${device.laptop} {
-    max-width: 70%;
-    margin: 0 auto;
-  }
-
-  @media ${device.laptopLarge} {
-    max-width: 60%;
-  }
-`;
 
 const StyledArticle = styled.article`
   display: flex;
