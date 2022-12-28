@@ -19,6 +19,15 @@ const StyledItem = styled.li`
   display: inline-block;
   margin-right: 16px;
   padding: 8px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: ${props => props.theme.black};
+    color: ${props => props.theme.pink};
+  }
+  &:hover a {
+    color: ${props => props.theme.pink};
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -29,10 +38,6 @@ const StyledLink = styled(Link)`
 
   &:active {
     color: ${props => props.theme.black};
-  }
-  &:hover {
-    color: white;
-    background-color: ${props => props.theme.black};
   }
 `;
 
