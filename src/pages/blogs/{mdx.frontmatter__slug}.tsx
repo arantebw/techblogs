@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql, HeadFC, PageProps } from "gatsby";
 import styled, { ThemeProvider } from "styled-components";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import Layout from "../../components/Layout";
 import Seo from "../../components/Seo";
@@ -29,7 +30,9 @@ const StyledContent = styled.section`
   }
 `;
 
-const BlogPostPage: React.FC<PageProps> = ({ data, children }) => {
+const BlogPostPage: React.FC<PageProps> = (query) => {
+  const { data, children } = query;
+  const heroImage = getImage(data.mdx.frontmatter.hero_image);
 
   return (
     <ThemeProvider theme={theme}>
@@ -37,7 +40,10 @@ const BlogPostPage: React.FC<PageProps> = ({ data, children }) => {
         <StyledMainPostView>
           <StyledH1>{data.mdx.frontmatter.title}</StyledH1>
           <small>{data.mdx.frontmatter.date}</small>
-          <StyledDiv></StyledDiv>
+          <GatsbyImage
+            image={heroImage}
+            alt={data.mdx.frontmatter.hero_image_alt}
+          />
           <StyledContent>
             {children}
           </StyledContent>
@@ -53,6 +59,14 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMMM YYYY")
+        hero_image_alt
+        hero_image_credit_link
+        hero_image_credit_photoby
+        hero_image {
+          childImageSharp {
+            gatsbyImageData(height:400)
+          }
+        }
       }
     }
   }
