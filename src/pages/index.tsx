@@ -7,7 +7,7 @@ import Seo from "../components/Seo";
 import "../styles.css";
 import { StyledH1, StyledMain } from "../styles";
 import { device, theme } from "../constants/theme";
-import {GatsbyImage, getImage} from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const StyledArticle = styled.article`
   display: flex;
