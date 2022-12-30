@@ -3,6 +3,7 @@ import * as Styled from "./styles";
 import * as Global from "../../styles";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../constants/theme";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Footer: React.FC = () => {
 	return (
@@ -18,10 +19,38 @@ const Footer: React.FC = () => {
 				<br />
 				This work is licensed under a <Global.StyledLink rel="license" to={"http://creativecommons.org/licenses/by-sa/4.0/"}>Creative Commons Attribution-ShareAlike 4.0 International License</Global.StyledLink>.
 				<Styled.Nav>
-					<Global.StyledLink to={"https://github.com/arantebw"}>GitHub</Global.StyledLink>
-					<Global.StyledLink to={"https://freecodecamp.org/arantebw"}>FreeCodeCamp</Global.StyledLink>
-					<Global.StyledLink to={"https://linkein.com/in/arantebw"}>LinkedIn</Global.StyledLink>
-					<Global.StyledLink to={"https://twiiter.com/arantebw"}>Twitter</Global.StyledLink>
+					<a href={"https://github.com/arantebw"}>
+						<StaticImage
+							src={"../../images/github.svg"}
+							alt={"GitHub logo"}
+							width={30}
+							height={30}
+						/>
+					</a>
+					<a href={"https://freecodecamp.org/arantebw"}>
+						<StaticImage
+							src={"../../images/free-code-camp.svg"}
+							alt={"FreeCodeCamp logo"}
+							width={30}
+							height={30}
+						/>
+					</a>
+					<a href={"https://linkedin.com/in/arantebw"}>
+						<StaticImage
+							src={"../../images/linkedin-in.svg"}
+							alt={"LinkedIn logo"}
+							width={30}
+							height={30}
+						/>
+					</a>
+					<a href={"https://twitter.com/arantebw"}>
+						<StaticImage
+							src={"../../images/twitter.svg"}
+							alt={"Twitter logo"}
+							width={30}
+							height={30}
+						/>
+					</a>
 				</Styled.Nav>
 			</Styled.Footer>
 		</ThemeProvider>

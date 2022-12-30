@@ -9,10 +9,8 @@ export const Footer = styled.footer`
 `;
 
 export const Nav = styled.nav`
-  padding-top: 16px;
-  padding-bottom: 16px;
-
-  & a {
-    margin-right: 16px;
-  }
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  column-gap: 24px;
 `;
