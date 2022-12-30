@@ -73,10 +73,12 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
             data.allMdx.nodes.map(node => (
               <StyledArticle key={node.id}>
                 <StyledDivLeft>
-                  <GatsbyImage
-                    image={getImage(node.frontmatter.hero_image)}
-                    alt={node.frontmatter.hero_image_alt}
-                  />
+                  <Link to={`/blogs/${node.frontmatter.slug}`}>
+                    <GatsbyImage
+                      image={getImage(node.frontmatter.hero_image)}
+                      alt={node.frontmatter.hero_image_alt}
+                    />
+                  </Link>
                 </StyledDivLeft>
                 <StyledDivRight>
                   <h2>
