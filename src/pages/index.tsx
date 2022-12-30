@@ -2,13 +2,12 @@ import * as React from "react";
 import { HeadFC, Link, PageProps } from "gatsby";
 import { graphql } from "gatsby";
 import styled, { ThemeProvider } from "styled-components";
-
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
-
 import "../styles.css";
 import { StyledH1, StyledMain } from "../styles";
 import { device, theme } from "../constants/theme";
+import {GatsbyImage, getImage} from "gatsby-plugin-image";
 
 const StyledArticle = styled.article`
   display: flex;
@@ -23,7 +22,6 @@ const StyledArticle = styled.article`
 
 const StyledDivLeft = styled.div`
   width: 100%;
-  height: 200px;
   flex-basis: auto;
   background-color: rgba(0, 0, 0, 20%);
 
@@ -74,7 +72,12 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
           {
             data.allMdx.nodes.map(node => (
               <StyledArticle key={node.id}>
-                <StyledDivLeft></StyledDivLeft>
+                <StyledDivLeft>
+                  <GatsbyImage
+                    image={getImage(node.frontmatter.hero_image)}
+                    alt={node.frontmatter.hero_image_alt}
+                  />
+                </StyledDivLeft>
                 <StyledDivRight>
                   <h2>
                     <StyledLink to={`/blogs/${node.frontmatter.slug}`}>
@@ -100,6 +103,12 @@ export const query = graphql`
           title
           date(formatString: "MMMM D, YYYY")
           slug
+          hero_image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+          hero_image_alt
         }
         id
         excerpt
