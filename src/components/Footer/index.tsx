@@ -23,32 +23,24 @@ const Footer: React.FC = () => {
 						<StaticImage
 							src={"../../images/github.svg"}
 							alt={"GitHub logo"}
-							width={30}
-							height={30}
 						/>
 					</a>
 					<a href={"https://freecodecamp.org/arantebw"}>
 						<StaticImage
 							src={"../../images/free-code-camp.svg"}
 							alt={"FreeCodeCamp logo"}
-							width={30}
-							height={30}
 						/>
 					</a>
 					<a href={"https://linkedin.com/in/arantebw"}>
 						<StaticImage
 							src={"../../images/linkedin-in.svg"}
 							alt={"LinkedIn logo"}
-							width={30}
-							height={30}
 						/>
 					</a>
 					<a href={"https://twitter.com/arantebw"}>
 						<StaticImage
 							src={"../../images/twitter.svg"}
 							alt={"Twitter logo"}
-							width={30}
-							height={30}
 						/>
 					</a>
 				</Styled.Nav>

@@ -13,4 +13,9 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: center;
   column-gap: 24px;
+
+  & > a {
+    width: 30px;
+    height: 30px;
+  }
 `;
