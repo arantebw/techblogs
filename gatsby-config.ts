@@ -2,7 +2,7 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: "Billy Arante's Techblogs",
+    title: "B.A. Techblogs",
     description: "Babbling about computer programming, open-source software, web development, and life.",
     siteUrl: "https://techblogs.gatsbyjs.io"
   },
