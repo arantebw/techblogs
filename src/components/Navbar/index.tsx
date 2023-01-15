@@ -31,9 +31,11 @@ const StyledItem = styled.li`
 `;
 
 const StyledLink = styled(Link)`
+  font-family: 'Ultra', serif;
+  font-weight: normal;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: bold;
+  letter-spacing: 1px;
   color: ${props => props.theme.black};
 
   &:active {

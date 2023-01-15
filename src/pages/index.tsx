@@ -55,6 +55,9 @@ const StyledDivRight = styled.div`
 `;
 
 const StyledLink = styled(Link)`
+  font-family: 'Ultra', serif;
+  font-weight: normal;
+  font-size: 1.5rem;
   color: ${props => props.theme.purple};
   text-decoration: none;
 
