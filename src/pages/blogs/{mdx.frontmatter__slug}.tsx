@@ -2,10 +2,8 @@ import React from "react";
 import { graphql, HeadFC, PageProps } from "gatsby";
 import styled, { ThemeProvider } from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-
 import Layout from "../../components/Layout";
 import Seo from "../../components/Seo";
-
 import { device, theme } from "../../constants/theme";
 import { StyledH1, StyledMainPostView } from "../../styles";
 
