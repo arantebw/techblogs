@@ -33,13 +33,42 @@ const S = {
       padding: 0 24px;
     }
   `,
+  PhotoCredit: styled.section`
+    color: gray;
+    font-size: smaller;
+
+    & > a {
+      color: gray;
+    }
+  `,
+}
+
+interface BlogPostPageProps {
+  data: {
+    mdx: {
+      frontmatter: {
+        title: string;
+        date: string;
+        slug: string;
+        hero_image: string;
+        hero_image_alt: string;
+        hero_image_credit_photoby: string;
+        hero_image_credit_link: string;
+      }
+    }
+  };
+  children: JSX.Element;
 }
 
 // Container of the hero banner
 const BlogPostPage: React.FC<PageProps> = (query) => {
   const { data, children } = query;
   const heroImage = getImage(data.mdx.frontmatter.hero_image);
-  const { last_update } = data.mdx.frontmatter;
+  const {
+    last_update,
+    hero_image_credit_photoby,
+    hero_image_credit_link,
+  } = data.mdx.frontmatter;
 
   return (
     <ThemeProvider theme={theme}>
@@ -54,6 +83,10 @@ const BlogPostPage: React.FC<PageProps> = (query) => {
             image={heroImage}
             alt={data.mdx.frontmatter.hero_image_alt}
           />
+          <S.PhotoCredit>
+            {`Photo by ${hero_image_credit_photoby} on `}
+            <a href={hero_image_credit_link}>Unsplash</a>
+          </S.PhotoCredit>
           <S.StyledContent>
             {children}
           </S.StyledContent>
