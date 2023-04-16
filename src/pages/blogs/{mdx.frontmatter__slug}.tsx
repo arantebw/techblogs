@@ -1,7 +1,7 @@
 import React from "react";
-import { graphql, HeadFC, PageProps } from "gatsby";
+import { graphql, HeadFC, HeadProps, PageProps } from "gatsby";
 import styled, { ThemeProvider } from "styled-components";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 import Layout from "../../components/Layout";
 import Seo from "../../components/Seo";
 import { device, theme } from "../../constants/theme";
@@ -47,45 +47,53 @@ const S = {
   `,
 }
 
-interface BlogPostPageProps {
-  data: {
-    mdx: {
-      frontmatter: {
-        title: string;
-        date: string;
-        slug: string;
-        hero_image: string;
-        hero_image_alt: string;
-        hero_image_credit_photoby: string;
-        hero_image_credit_link: string;
-      }
+type MdxData = {
+  mdx: {
+    frontmatter: {
+      title: string;
+      date: string;
+      last_update: string;
+      slug: string;
+      hero_image: ImageDataLike;
+      hero_image_alt: string;
+      hero_image_credit_photoby: string;
+      hero_image_credit_link: string;
     }
-  };
+  }
+}
+
+interface BlogPostPageProps {
+  data: MdxData;
   children: JSX.Element;
 }
 
 // Container of the hero banner
-const BlogPostPage: React.FC<PageProps> = (query) => {
+const BlogPostPage = (query: BlogPostPageProps) => {
   const { data, children } = query;
-  const heroImage = getImage(data.mdx.frontmatter.hero_image);
   const {
+    title,
+    date,
     last_update,
+    slug,
+    hero_image,
+    hero_image_alt,
     hero_image_credit_photoby,
     hero_image_credit_link,
   } = data.mdx.frontmatter;
+  const heroImage = getImage(hero_image);
 
   return (
     <ThemeProvider theme={theme}>
       <Layout>
         <StyledMainPostView>
-          <StyledH1>{data.mdx.frontmatter.title}</StyledH1>
+          <StyledH1>{title}</StyledH1>
           <S.Dates>
-            <small>{`Published: ${data.mdx.frontmatter.date}`}</small>
-            {last_update && (<small>{`Updated: ${data.mdx.frontmatter.last_update}`}</small>)}
+            <small>{`Published: ${date}`}</small>
+            {last_update && (<small>{`Updated: ${last_update}`}</small>)}
           </S.Dates>
           <GatsbyImage
             image={heroImage}
-            alt={data.mdx.frontmatter.hero_image_alt}
+            alt={hero_image_alt}
           />
           <S.PhotoCredit>
             {`Photo by ${hero_image_credit_photoby} on `}
