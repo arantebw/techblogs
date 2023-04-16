@@ -38,3 +38,22 @@ brew install pnpm
 
 This configuration is still on the testing phase. So, from the `System
 Settings > Keyboard > Keyboard Shortcuts`.
+
+## Setup `tmux-resurrect` and `tmux-continuum` for `tmux` environment persistence
+
+Install the `tmux-resurrect` and `tmux-continuum` in the `~/.config` directory.
+
+```
+cd ~/.config
+git clone git@github.com:tmux-plugins/tmux-continuum.git
+git clone git@github.com:tmux-plugins/tmux-resurrect.git
+```
+
+Set this configs in the `.tmux.conf` file.
+
+```
+# Persist tmux sessions on reboots
+run-shell ~/.config/tmux-resurrect/resurrect.tmux
+# Auto-save tmux sessions for persistence
+run-shell ~/.config/tmux-continuum/continuum.tmux
+```
