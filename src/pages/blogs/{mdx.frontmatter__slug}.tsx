@@ -23,6 +23,8 @@ const S = {
     }
   `,
   StyledContent: styled.section`
+    line-height: 2;
+
     & p {
       margin-bottom: 16px;
     }
