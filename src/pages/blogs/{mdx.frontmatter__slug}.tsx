@@ -29,6 +29,10 @@ const S = {
       margin-bottom: 16px;
     }
 
+    & > ul {
+      padding-left: 1rem;
+    }
+
     @media ${device.tablet} {
       padding: 0 24px;
     }
