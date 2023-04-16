@@ -17,3 +17,13 @@ machine setup.
 - In Visual Studio Code, the font will automatically be used without
   restarting the editor.
 - In `kitty` terminal, you need to completely quit and restart the app.
+
+## Install the `kitty` terminal and personal configs
+
+- Follow the instruction in the *Binary install* section [here](https://sw.kovidgoyal.net/kitty/binary/#binary-install).
+- Install the `.dotfiles` configs to the `~` directory if not already.
+- Create a symlink of the `kitty.conf` file to `~/.config/kitty/` directory.
+  ```bash
+  ln -s ~/.dotfiles/kitty.conf ~/.config/kitty/
+  ```
+- Restart the `kitty` terminal to use the configs.
