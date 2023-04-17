@@ -36,8 +36,9 @@ brew install pnpm
 
 ## Configure the Option key to act like as Ctrl key
 
-This configuration is still on the testing phase. So, from the `System
-Settings > Keyboard > Keyboard Shortcuts`.
+This configuration is currently on the testing phase. So, from the `System
+Settings > Keyboard > Keyboard Shortcuts > Modifier Keys`. Swap the between the
+`Option` key and the `Control` key.
 
 ## Setup `tmux-resurrect` and `tmux-continuum` for `tmux` environment persistence
 
@@ -56,4 +57,26 @@ Set these configs in the `.tmux.conf` file.
 run-shell ~/.config/tmux-resurrect/resurrect.tmux
 # Auto-save tmux sessions for persistence
 run-shell ~/.config/tmux-continuum/continuum.tmux
+```
+
+## Setup `commitizen` for conventional commits
+
+Install `commitizen`.
+
+```bash
+pnpm install -g commitizen
+```
+
+Install `cz-conventional-changelog` to enable conventional commits.
+
+```bash
+pnpm install -g cz-conventional-changelog
+```
+
+**Note:** Always use the latest LTS version of Node.
+
+Create a symbolic link of the `.czrc` file to the `~` directory.
+
+```bash
+ln -s ~/.dotfiles/.czrc ~/
 ```
