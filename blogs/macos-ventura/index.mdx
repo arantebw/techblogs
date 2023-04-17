@@ -59,7 +59,7 @@ run-shell ~/.config/tmux-resurrect/resurrect.tmux
 run-shell ~/.config/tmux-continuum/continuum.tmux
 ```
 
-## Setup `commitizen` for conventional commits
+## Setup conventional and emojified commits
 
 Install `commitizen`.
 
@@ -79,4 +79,10 @@ Create a symbolic link of the `.czrc` file to the `~` directory.
 
 ```bash
 ln -s ~/.dotfiles/.czrc ~/
+```
+
+Install `devmoji` to enable emojified commit messages.
+
+```bash
+pnpm install -g devmoji
 ```
