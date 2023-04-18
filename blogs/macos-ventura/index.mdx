@@ -86,3 +86,16 @@ Install `devmoji` to enable emojified commit messages.
 ```bash
 pnpm install -g devmoji
 ```
+
+## Setup `mkcert` and `local-ssl-proxy` to enable local HTTPS proxy servers
+
+```bash
+brew install mkcert
+mkcert -install
+mkcert localhost
+```
+
+```bash
+pnpm install -g local-ssl-proxy
+local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem
+```
