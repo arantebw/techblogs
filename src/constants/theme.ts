@@ -1,9 +1,9 @@
 export const theme = {
   black: "#000000",
-  white: "#FFFFFF",
-  pink: "#FB2576",
+  white: "#ffffff",
+  pink: "#fb2576",
   blue: "#150050",
-  purple: "#3F0071"
+  purple: "#673ab7"
 };
 
 export const screenSize = {

@@ -4,7 +4,7 @@ export const Footer = styled.footer`
   text-align: center;
   font-size: 12px;
   margin-top: 16px;
-  border-top: 8px solid ${props => props.theme.pink};
+  border-top: 8px solid ${props => props.theme.purple};
   padding: 24px 0;
 `;
 

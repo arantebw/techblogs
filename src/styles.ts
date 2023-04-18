@@ -51,5 +51,5 @@ export const StyledH1 = styled.h1`
   font-family: 'Ultra', serif;
   font-weight: normal;
   font-size: 1.75rem;
-  color: ${props => props.theme.blue};
+  color: ${props => props.theme.purple};
 `;

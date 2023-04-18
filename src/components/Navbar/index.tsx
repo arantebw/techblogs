@@ -4,7 +4,7 @@ import styled, {ThemeProvider} from "styled-components";
 import { theme } from "../../constants/theme";
 
 const StyledNav = styled.nav`
-  background-color: ${props => props.theme.pink};
+  background-color: ${props => props.theme.purple};
   display: flex;
   justify-content: center;
 `;
@@ -23,10 +23,10 @@ const StyledItem = styled.li`
   &:hover {
     cursor: pointer;
     background-color: ${props => props.theme.black};
-    color: ${props => props.theme.pink};
+    color: ${props => props.theme.purple};
   }
   &:hover a {
-    color: ${props => props.theme.pink};
+    color: ${props => props.theme.purple};
   }
 `;
 

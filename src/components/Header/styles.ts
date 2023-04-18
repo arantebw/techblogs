@@ -10,7 +10,7 @@ export const Header = styled.header`
 `;
 
 export const Title = styled.h1`
-	color: ${props => props.theme.pink};
+	color: ${props => props.theme.purple};
 	font-size: 2rem;
 	font-family: 'Ultra', serif;
 	font-weight: normal;
