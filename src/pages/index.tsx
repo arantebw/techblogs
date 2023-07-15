@@ -8,6 +8,7 @@ import "../styles.css";
 import { StyledH1, StyledMain } from "../styles";
 import { device, theme } from "../constants/theme";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Button } from "@arantebw/yoo-eye";
 
 const StyledArticle = styled.article`
   display: flex;
@@ -90,6 +91,7 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
                     </StyledLink>
                   </h2>
                   <p>{node.excerpt}</p>
+                  <Button text="Read More" variant="ghost" />
                 </StyledDivRight>
               </StyledArticle>
             ))
