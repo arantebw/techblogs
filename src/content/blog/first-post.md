@@ -2,7 +2,7 @@
 title: 'A Hello World Blog'
 description: 'My first blog as a hello world post.'
 pubDate: '2022-12-21'
-heroImage: 'https://unsplash.com/photos/3MYvgsH1uK0'
+heroImage: '/blog/hero.jpg'
 ---
 
 This is my first post on my personally crafted blog site. In this blog, I will
